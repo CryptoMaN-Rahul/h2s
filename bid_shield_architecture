@@ -1,0 +1,83 @@
+digraph "Bid-Shield: AI-Powered Tender Compliance Platform" {
+	graph [bgcolor=white fontcolor="#2D3436" fontname="Sans-Serif" fontsize=14 label="Bid-Shield: AI-Powered Tender Compliance Platform" nodesep=0.60 pad=0.5 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"38c27eb11dc641eb9688764cb208b967" [label="SME Users" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/onprem/client/users.png" shape=none]
+	subgraph "cluster_Frontend Layer" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Frontend Layer" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"384e309f524141279cb5a483b93d3d93" [label="CloudFront CDN" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/network/cloudfront.png" shape=none]
+		"05a22585bab745c48a66a8a2c43d4fd1" [label="Next.js Dashboard
+PDF Viewer + Analytics" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/onprem/compute/server.png" shape=none]
+	}
+	subgraph "cluster_API & Auth" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="API & Auth" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		aef9c11cb6764e93af6ac4bb90f8e765 [label="API Gateway" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/network/api-gateway.png" shape=none]
+		"574d6713c94a4143ab5adfb46f54c0eb" [label="Cognito Auth" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/security/cognito.png" shape=none]
+	}
+	subgraph "cluster_Application Services" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Application Services" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		d3b3f5115df94393a844d9f545990d1b [label="Document Upload" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/compute/lambda.png" shape=none]
+		"38a6f1e3dd9d4417a87b72beff5acf74" [label="Analysis Service" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/compute/lambda.png" shape=none]
+		e7ace9194ec344af95049acd496d230e [label="Query Generator" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/compute/lambda.png" shape=none]
+		"76f0042b0a53496db54365bc9580e322" [label=Notifications height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/compute/lambda.png" shape=none]
+	}
+	subgraph "cluster_AI/ML Processing" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="AI/ML Processing" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		c1a5d52f52b74ed5b10f25686db2506e [label="Step Functions
+Orchestrator" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/integration/step-functions.png" shape=none]
+		"191030ccbb7e441daad5d710ab36979b" [label="Textract Queries
+Data Extraction" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/ml/textract.png" shape=none]
+		"842ed60550b140d49a7eda3e36e10706" [label="Amazon Bedrock" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/ml/bedrock.png" shape=none]
+		subgraph "cluster_AI Agents" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="AI Agents" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"0eba9df927694cdb85b933abde56cd16" [label="Lawyer Agent
+Claude Sonnet 4.5" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/onprem/compute/server.png" shape=none]
+			"4abdbc09274445539484f634f0b03b61" [label="Auditor Agent
+Claude Sonnet 4.5" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/onprem/compute/server.png" shape=none]
+		}
+	}
+	subgraph "cluster_Data Storage" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Data Storage" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		ca5aeb672d094060a0f4b089accf322b [label="S3
+Document Storage" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/storage/simple-storage-service-s3.png" shape=none]
+		c75264e4089b42cf85c4822aed8ff6be [label="DynamoDB
+Profiles + Results" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/database/dynamodb.png" shape=none]
+		"8d1b44bdc2b64fa0b4199655fa640cfa" [label="OpenSearch
+CVC Knowledge Base" height=2.3 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/analytics/elasticsearch-service.png" shape=none]
+	}
+	subgraph cluster_Security {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=Security labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"0d0bceac6d644e21bc7acc152c52eaa9" [label="KMS Encryption" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/security/key-management-service.png" shape=none]
+		e068baab4121476db60df719af328cf5 [label="IAM Roles" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/security/identity-and-access-management-iam.png" shape=none]
+		"9b425afdcd64490391a649fc06e09bcb" [label=CloudWatch height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/aws/management/cloudwatch.png" shape=none]
+	}
+	subgraph "cluster_External APIs" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="External APIs" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"5f8767c3c57b4669a9e566ad83dc2b99" [label="GeM Portal" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/onprem/compute/server.png" shape=none]
+		"05a6eff66a1549bf8e62b00d8e59a956" [label="MSME Portal" height=1.9 image="/Users/rahulm/.cache/uv/archive-v0/B1ezM_6kOBGrSg4d9Y1-7/lib/python3.10/site-packages/resources/onprem/compute/server.png" shape=none]
+	}
+	"38c27eb11dc641eb9688764cb208b967" -> "384e309f524141279cb5a483b93d3d93" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"384e309f524141279cb5a483b93d3d93" -> "05a22585bab745c48a66a8a2c43d4fd1" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"05a22585bab745c48a66a8a2c43d4fd1" -> aef9c11cb6764e93af6ac4bb90f8e765 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	aef9c11cb6764e93af6ac4bb90f8e765 -> "574d6713c94a4143ab5adfb46f54c0eb" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	aef9c11cb6764e93af6ac4bb90f8e765 -> d3b3f5115df94393a844d9f545990d1b [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	d3b3f5115df94393a844d9f545990d1b -> ca5aeb672d094060a0f4b089accf322b [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	ca5aeb672d094060a0f4b089accf322b -> c1a5d52f52b74ed5b10f25686db2506e [label="S3 Event" dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c1a5d52f52b74ed5b10f25686db2506e -> "191030ccbb7e441daad5d710ab36979b" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c1a5d52f52b74ed5b10f25686db2506e -> "842ed60550b140d49a7eda3e36e10706" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"842ed60550b140d49a7eda3e36e10706" -> "0eba9df927694cdb85b933abde56cd16" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"842ed60550b140d49a7eda3e36e10706" -> "4abdbc09274445539484f634f0b03b61" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"191030ccbb7e441daad5d710ab36979b" -> c75264e4089b42cf85c4822aed8ff6be [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"0eba9df927694cdb85b933abde56cd16" -> "8d1b44bdc2b64fa0b4199655fa640cfa" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"0eba9df927694cdb85b933abde56cd16" -> c75264e4089b42cf85c4822aed8ff6be [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"4abdbc09274445539484f634f0b03b61" -> c75264e4089b42cf85c4822aed8ff6be [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"38a6f1e3dd9d4417a87b72beff5acf74" -> e7ace9194ec344af95049acd496d230e [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e7ace9194ec344af95049acd496d230e -> c75264e4089b42cf85c4822aed8ff6be [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"38a6f1e3dd9d4417a87b72beff5acf74" -> "5f8767c3c57b4669a9e566ad83dc2b99" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"38a6f1e3dd9d4417a87b72beff5acf74" -> "05a6eff66a1549bf8e62b00d8e59a956" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	ca5aeb672d094060a0f4b089accf322b -> "0d0bceac6d644e21bc7acc152c52eaa9" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c75264e4089b42cf85c4822aed8ff6be -> "0d0bceac6d644e21bc7acc152c52eaa9" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c1a5d52f52b74ed5b10f25686db2506e -> "9b425afdcd64490391a649fc06e09bcb" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	aef9c11cb6764e93af6ac4bb90f8e765 -> e068baab4121476db60df719af328cf5 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"76f0042b0a53496db54365bc9580e322" -> aef9c11cb6764e93af6ac4bb90f8e765 [label=WebSocket dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+}
